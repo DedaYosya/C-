@@ -13,44 +13,49 @@ using namespace std;
 int main() {
     setlocale(LC_ALL, "Russian");
     srand(time(0));
-    // Создаем массив из 100 элементов
+ // вводим переменные
+    int chet = 0;
+    int nechet = 0;
 
-    
+ // Создаем массив из 100 элементов
     int arr[100];
-    cout << "Получили массив: ";
-    // Заполняем массив рандомно
+
+ // Заполняем массив рандомно и считаем количество 
     for (int i = 0; i < 100; i++) {
-        arr[i] = rand();
-        cout << arr[i] << " ";
+        arr[i] = rand() % 100;
+        if (arr[i] % 2 == 0) {
+            chet ++;
+        }
+        else {
+            nechet ++;
+        }
     }
-        int a=0;//Колличество нечётных
-        int b=0;//Колличество чётных
-        for (int i = 0; i < 100; i++) {
-            if (arr[i] % 2 = 0)
-            {
-                a = a + 1;
+// Выводим в консоль
+            if (nechet > chet) {
+                cout << "Всего чисел " << nechet<< endl;
+                cout << "Нечётные числа" << endl;
+                for (int i = 0; i < 100; i++) {
+                    if (arr[i] % 2 == 1) {
+                        cout << arr[i] << " ";
+                    }
+                }
             }
-            else
-            {
-                b = b + 1;
-
+            else if (chet > nechet) {
+                cout << "Всего чисел " << chet << endl;
+                cout << "Четные числа" << endl;
+                for (int i = 0; i < 100; i++) {
+                    if (arr[i] % 2 == 0) {
+                       cout << arr[i] << " ";
+                    }
+                }
             }
-
-            if (a > b)
-            {
-                cout << "Колличество чётных" << a;
+            else {
+                cout << "Всего чисел " << (chet + nechet) << endl;
+                cout << "Одинаково четных и нечетных чисел" << endl;
+                for (int i = 0; i < 100; i++) {
+                    cout << arr[i] << " ";
+                }
             }
-            if (b > a)
-            {
-                cout << "Колличество нечётных" << b;
-            }
-            if (b == a)
-            {
-                cout << "И нечётные и четные числа" << arr;
-            }
-        
-
-    }
     system("PAUSE");
     return 0;
 }
