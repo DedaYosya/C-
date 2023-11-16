@@ -54,8 +54,8 @@ int main() {
     int stop;
     while (true) {
         cout << "Продолжить вычисления?" << endl;
-        cout << "Введите 1 и нажмите Enter что бы продолжить" << endl;
-        cout << "Введите 2 нажмите Enter что бы выйти из программы" << endl;
+        cout << "Введите 1 и нажмите Enter чтобы продолжить" << endl;
+        cout << "Введите 2 нажмите Enter чтобы выйти из программы" << endl;
         cin >> stop;
         if (stop != 2) {
             system("cls");
