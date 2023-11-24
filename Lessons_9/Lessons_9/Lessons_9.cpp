@@ -19,51 +19,45 @@ int main() {
     setlocale(LC_ALL, "Russian");
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
- // Вводим переменные
+    // Вводим переменные
     double num1, num2;
     char op;
- // Вводим данные с консоли
-    cout << "Введите первое число: " << endl;
-    cin >> num1;
-    cout << "Введите второе число: " << endl;
-    cin >> num2;
-    cout << "Введите операцию действия (+, -, *, /, ^): " << endl;
-    cin >> op;
- // Определяем операции
-    switch (op) {
-    case '+':
-        cout << "Результат сложения: " << num1 + num2 << endl;
-        break;
-    case '-':
-        cout << "Результат вычитания: " << num1 - num2 << endl;
-        break;
-    case '*':
-        cout << "Результат умножения: " << num1 * num2 << endl;
-        break;
-    case '^':
-        cout << "Результат возведения в степень: " << pow(num1,num2) << endl;
-        break;
-    case '/':
-        if (num2 != 0) { // Проверка деление на 0
-            cout << "Результат деления: " << num1 / num2 << endl;
+    string exit;
+    while (exit != "exit") { // Цикл для выхода или продолжения
+        // Вводим данные с консоли
+        cout << "Введите первое число: " << endl;
+        cin >> num1;
+        cout << "Введите второе число: " << endl;
+        cin >> num2;
+        cout << "Введите операцию действия (+, -, *, /, ^): " << endl;
+        cin >> op;
+        // Определяем операции
+        switch (op) {
+        case '+':
+            cout << "Результат сложения: " << num1 + num2 << endl;
+            break;
+        case '-':
+            cout << "Результат вычитания: " << num1 - num2 << endl;
+            break;
+        case '*':
+            cout << "Результат умножения: " << num1 * num2 << endl;
+            break;
+        case '^':
+            cout << "Результат возведения в степень: " << pow(num1, num2) << endl;
+            break;
+        case '/':
+            if (num2 != 0) { // Проверка деление на 0
+                cout << "Результат деления: " << num1 / num2 << endl;
+            }
+            else {
+                cout << "Ошибка: деление на ноль запрещено" << endl;
+            }
         }
-        else {
-            cout << "Ошибка: деление на ноль запрещено" << endl;
-        }
-    }
-// Блок продолжения работы и остановки программы
-    int stop;
-    while (true) {
-        cout << "Введите 1 и нажмите Enter чтобы продолжить" << endl;
-        cout << "Введите 2 нажмите Enter чтобы выйти из программы" << endl;
-        cin >> stop;
-        if (stop != 2) {
-            system("cls");
-            main();
-        }
-        else {
-            system("PAUSE");
-            return 0;
-        }
-    }
+        // Блок продолжения работы и остановки программы
+        cout << "Введите \exit\ и нажмите Enter чтобы выйти из программы" << endl;
+        cout << "Введите '0' и нажмите Enter чтобы продолжить" << endl;
+        cin >> exit;
+        system("cls");
+     }
+    return 0;
 }
