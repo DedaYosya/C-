@@ -1,20 +1,13 @@
-﻿// ConsoleApplication1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// Lessons_1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
-#include <string>
-using namespace std;
+
 int main()
 {
-
-    string hi = "Hello";
-    int counter = 3;
-    while (counter == 3) {
-        cout << hi << endl;
-        counter++;
-    }
-
+    std::cout << "Hello World!\n";
 }
+
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
 
