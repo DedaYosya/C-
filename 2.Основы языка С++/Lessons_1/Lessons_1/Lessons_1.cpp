@@ -7,10 +7,26 @@
 //
 
 #include <iostream>
+#include <cstdlib>
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+// создаем функцию 'sum' для суммы чисел
+int sum(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    setlocale(LC_ALL, "Russian");
+    // создаем переменные
+    int number1;
+    int number2;
+    // вводим числа из консоли
+    cout << "Ведите первое число:" << endl;
+    cin >> number1;
+    cout << "Ведите второе число:" << endl;
+    cin >> number2;
+    // выводим сумму чисел в консоль вызвав функцию 'sum'
+    cout << "Сумма чисел равна " << sum(number1, number2) << endl;
 }
 
 // 2. Какой тип можно было бы использовать для функции, 
