@@ -75,11 +75,13 @@ int main() {
     setlocale(LC_ALL, "Russian");
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
+
     string input = getInput();
     vector<string> phrases = splitString(input);
     for (const string& phrase : phrases) {
         string morseCode = toMorseCode(phrase);
         cout << morseCode << endl;
     }
+
     return 0;
 }
