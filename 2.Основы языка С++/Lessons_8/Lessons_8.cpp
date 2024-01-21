@@ -6,12 +6,16 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <Windows.h>
 using namespace std;
 
 int main() {
     setlocale(LC_ALL, "Russian");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 	// создали переменную
     string name;
+	// вводим имя
     cout << "Введите ваше имя: ";
     cin >> name;
 	    // Запись в файл
@@ -22,7 +26,7 @@ int main() {
 		}
 		else cout << "Error!";
 		out.close();
-		// чтение из файла	
+		// чтение из файла и вывод в консоль
 		ifstream in("hello.txt");
 		if (in.is_open()) {
 			while (getline(in, name)) {
