@@ -10,24 +10,27 @@ using namespace std;
 
 int main() {
     setlocale(LC_ALL, "Russian");
+	// создали переменную
     string name;
     cout << "Введите ваше имя: ";
     cin >> name;
-    ofstream file("hello.txt");
-    if (!file.is_open()) {
-        cout << "Ошибка открытия файла!" << endl;
-        return 1;
-    }
-    file << "Привет, " << name << endl;
-    file.close();
-    ifstream inputFile("hello.txt");
-    if (!inputFile.is_open()) {
-        cout << "Ошибка открытия файла!" << endl;
-        return 1;
-    }
-    string greeting;
-    getline(inputFile, greeting);
-    cout << greeting << endl;
-    inputFile.close();
-    return 0;
-}
+	    // Запись в файл
+		ofstream out;
+		out.open("hello.txt");
+		if (out.is_open()) {
+			out << name;
+		}
+		else cout << "Error!";
+		out.close();
+		// чтение из файла	
+		ifstream in("hello.txt");
+		if (in.is_open()) {
+			while (getline(in, name)) {
+				cout << "Привет, " << name << endl;
+			}
+		}
+		in.close();
+		system("PAUSE");
+		return 0;
+
+	}
