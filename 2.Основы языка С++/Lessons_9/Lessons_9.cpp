@@ -65,12 +65,12 @@ int main() {
     string textInput;
     do {
         cout << "Для перевода на код Морзе введите текст и нажмите Enter: " << endl;
-        cout << "Для выхода из программы введите 'q' и нажмите Enter: " << endl;
+        cout << "Для выхода из программы введите '1' и нажмите Enter: " << endl;
         getline(cin, textInput);
         string textMorse = textToMorse(textInput);
         cout << "Код на Морзе: " << textMorse << endl;
         cout << endl;
     } 
-    while (textInput != "q");
+    while (textInput != "1");
     return 0;
 }
