@@ -61,7 +61,7 @@ int main() {
     setlocale(LC_ALL, "Russian");
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-
+// Вводим текст и реализуем перевод, или выходим из программы
     string textInput;
     do {
         cout << "Для перевода на код Морзе введите текст и нажмите Enter: " << endl;
