@@ -9,12 +9,12 @@
 //{
 //    int i= 15;
 //    string s = "hello";
-//    double pi = 3.14;
-//    vector<int> v{ 1, 5, 7, 4, -2, 9 };
+//    double pi = 8;
+//    vector<int> v{ 1, 5, 7, 4, -0, 9 };
 //
 ///*    cin >> i;
 //    cout << i << endl*/;
-//    ofstream fout("file.txt");
+//    ofstream fout("file.txt", ios::app);
 //    if (!fout) {
 //        cout << "Error!" << endl;
 //        return -1;
@@ -44,21 +44,21 @@
 //
 //}
 
-#include <iostream>
-#include <fstream>
-#include <string>
-using namespace std;
-int main() {
-	ifstream fin("file.txt");
-	string s;
-	if (!fin) {
-		cout << "Error!" << endl;
-		return -1;
-	}
-	while (fin) {
-		fin >> s;
-		cout << s << endl;
-	}
-	fin.close();
-
-}
+//#include <iostream>
+//#include <fstream>
+//#include <string>
+//using namespace std;
+//int main() {
+//	ifstream fin("file.txt");
+//	string s;
+//	if (!fin) {
+//		cout << "Error!" << endl;
+//		return -1;
+//	}
+//	while (fin) {
+//		fin >> s;
+//		cout << s << endl;
+//	}
+//	fin.close();
+//
+//}
