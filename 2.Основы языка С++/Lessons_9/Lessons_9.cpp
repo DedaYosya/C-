@@ -20,7 +20,7 @@ using namespace std;
 string letterToMorse(char c) {
 
 // Создаем словарь Морзе
-    map<char, string> codMorse = {
+    static const map<char, string> codMorse = {
         {'A', ".-"}, {'B', "-..."}, {'C', "-.-."}, {'D', "-.."}, {'E', "."}, {'F', "..-."},
         {'G', "--."}, {'H', "...."}, {'I', ".."}, {'J', ".---"}, {'K', "-.-"}, {'L', ".-.."},
         {'M', "--"}, {'N', "-."}, {'O', "---"}, {'P', ".--."}, {'Q', "--.-"}, {'R', ".-."},
@@ -32,11 +32,11 @@ string letterToMorse(char c) {
         {'П', ".--."}, {'Р', ".-."}, {'С', "..."}, {'Т', "-"}, {'У', "..-"},
         {'Ф', "..-."}, {'Х', "...."}, {'Ц', "-.-."}, {'Ч', "---."}, {'Ш', "----"},
         {'Щ', "--.-"}, {'Ъ', ".--.-."}, {'Ы', "-.--"}, {'Ь', "-..-"}, {'Э', "...-..."},
-        {'Ю', "..--"}, {'Я', ".-.-"}
+        {'Ю', "..--"}, {'Я', ".-.-"}, {' ', "/"}
     };
-    map<char, string>::iterator it = codMorse.find(toupper(c));
-    if (it != codMorse.end()) {
-        return it->second;
+    char  upperC = toupper(c);
+    if (codMorse.find(upperC) != codMorse.end()) {
+        return codMorse.at(upperC);
     }
     return "";
 }
@@ -44,15 +44,12 @@ string letterToMorse(char c) {
 string textToMorse(const string& text) {
     string textMorse = "";
     for (char c : text) {
-        if (c == ' ') {
-            textMorse += "/";
-        }
-        else {
             string morse = letterToMorse(c);
             if (!morse.empty()) {
-                textMorse += morse + " ";
+                textMorse += ' ';
+                textMorse += morse;
             }
-        }
+ 
     }
     return textMorse;
 }
@@ -72,5 +69,7 @@ int main() {
         cout << endl;
     } 
     while (textInput != "1");
+    if (cout << "Выход из программы" << endl);
+    system("PAUSE");
     return 0;
 }
