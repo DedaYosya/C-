@@ -46,11 +46,13 @@ int main() {
 
 	// Выводим данные в терминал
 	cout << "Все животные: " << endl;
+	cout << endl;
 	cout << a1.name << endl;
 	cout << a2.name << endl;
 	cout << a3.name << endl;
 	cout << a4.name << endl;
 	cout << a5.name << endl;
+	cout << endl;
 	cout << a1.name << " весил до еды " << a1.weight << " кг. " << endl; 
 	a1.weight = 220;
 	cout << a1.name << " весил после еды " << a1.weight << " кг. " << endl;
