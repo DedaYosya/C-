@@ -25,15 +25,15 @@ public:
         this->age = age;
     }
 
-    // Метод для возраста
-    int print() {
+    // Гетер для возраста
+    int get_print() {
         return age;
     }
 
-    // Метод добавления к возрасту
-     int birthday(int number) {
+    // Сетер добавления к возрасту
+     int set_birthday(int number) {
          age += number;
-        print();
+         get_print();
         return age;
     }
 };
@@ -45,13 +45,13 @@ int main() {
     Animal a2("Лев", 35);
     Animal a3("Носорог", 78);
     // Выводим в консоль
-    cout << "Животное: " << a1.name << " / Возраст: " << a1.print() << endl;
-    cout << "Животное: " << a2.name << " / Возраст: " << a2.print() << endl;
-    cout << "Животное: " << a3.name << " / Возраст: " << a3.print() << endl;
+    cout << "Животное: " << a1.name << " / Возраст: " << a1.get_print() << endl;
+    cout << "Животное: " << a2.name << " / Возраст: " << a2.get_print() << endl;
+    cout << "Животное: " << a3.name << " / Возраст: " << a3.get_print() << endl;
     cout << "-- Возраст после добавления" << endl;
-    cout << "Животное: " << a1.name << " / Возраст: " << a1.birthday(10) << endl;
-    cout << "Животное: " << a2.name << " / Возраст: " << a2.birthday(10) << endl;
-    cout << "Животное: " << a3.name << " / Возраст: " << a3.birthday(10) << endl;
+    cout << "Животное: " << a1.name << " / Возраст: " << a1.set_birthday(10) << endl;
+    cout << "Животное: " << a2.name << " / Возраст: " << a2.set_birthday(10) << endl;
+    cout << "Животное: " << a3.name << " / Возраст: " << a3.set_birthday(10) << endl;
     system("PAUSE");
     return 0;
 }
