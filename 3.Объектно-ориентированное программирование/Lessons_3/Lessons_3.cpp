@@ -25,12 +25,12 @@ public:
         this->age = age;
     }
 
-    // Гетер для возраста
+    // Гетеер для возраста
     int get_print() {
         return age;
     }
 
-    // Сетер добавления к возрасту
+    // Сеттер добавления к возрасту
      int set_birthday(int number) {
          age += number;
          get_print();
