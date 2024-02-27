@@ -9,9 +9,6 @@
 // - c параметром int age(сравнить возраст животного с числом)
 // - с параметром Animal a(сравнить возраст двух животных между собой)
 
-
-
-
 #include <iostream>
 #include <string>
 using namespace std;
@@ -21,48 +18,71 @@ private:
     int age;
 public:
     string name;
-    // Конструктор без параметров
-    //Animal() {
-    //    age = 0;
-    //    name = "Unknown";
-    //}
-    // Конструктор с одним параметром
-    //Animal(string animalName) : name(animalName) {
-    //    age = 0;
-    //}
-    // Конструктор с двумя параметрами
-    Animal(string animalName = "", int animalAge = 0) : name(animalName), age(animalAge) {}
 
-    // Метод для сравнения возраста с числом
-    bool compareAge(int targetAge) {
-        return age == targetAge;
+    // Конструктор без параметров
+    Animal() {}
+
+    // Конструктор с одним параметром
+    Animal(string animalName) : name(animalName) {}
+        // this->name = animalName; }  можно так написать код
+    Animal(int animalAge) : age(animalAge) {}
+    
+    // Конструктор с двумя параметрами
+    Animal(string animalName, int animalAge){
+        this->name = animalName;
+        this->age = animalAge;
     }
-    // Метод для сравнения возраста с другим животным
-    bool compareAge(Animal a) {
-        return age == a.age;
+    // Animal(string animalName = "", int animalAge = 0) : name(animalName), age(animalAge) {}   
+    // можно так сократить код для "без параметров" и с "двумя параметрами" если валидное значение
+
+    // Гетеер для возраста
+    int get_print() {
+        return age;
+    }
+    // Метод сравнения возраста с числом
+    bool compareAge(int num) {
+        return age >= num;
+    }
+    // Метод сравнения возраста одного животного с возрастом другого животного
+    bool compareAge(const Animal& a) {
+        get_print();
+        return age >= a.age;
     }
 };
 
 int main(){
     setlocale(LC_ALL, "Rus");
-    // Создание пяти объектов класса Animal с использованием различных конструкторов
-    Animal unknownAnimal;
+
+    // Создание объектов класса Animal
+    Animal wolf;
     Animal dog("Арчи");
-    Animal cat("Милка", 5);
-    Animal bird("Вася");
-    Animal fish("Суши", 2);
-    // Пример использования методов сравнения возраста
-    if (dog.compareAge(3)) {
-        cout << dog.name << " is 3 years old.n";
+    Animal cat("Милка", 10);
+    Animal parrot("Кеша", 5);
+    Animal mouse("Микки", 7);
+    Animal (4);
+
+    // Сравнение возраста с числом
+    if (cat.compareAge(9)) {
+        cout << cat.name << " старше заданного числа 9" << endl;
+        cout << cat.name << " " << cat.get_print() << " лет " << endl;
     }
     else {
-        cout << dog.name << " is not 3 years old.n";
+        cout << cat.name << " младше заданного числа 9" << endl;
+        cout << cat.name << " " << cat.get_print() << " лет " << endl;
     }
-    if (cat.compareAge(bird)) {
-        cout << cat.name << " and " << bird.name << " are the same age.n";
+
+    // Сравнение возраста с возрастом
+    if (mouse.compareAge(parrot)) {
+        cout << "-------------------------------" << endl;
+        cout << mouse.name << " старше " << parrot.name << endl;
+        cout << mouse.name << " " << mouse.get_print() << " лет " << endl;
+        cout << parrot.name << " " << parrot.get_print() << " лет " << endl;
     }
     else {
-        cout << cat.name << " and " << bird.name << " are different ages.n";
+        cout << mouse.name << " младше " << parrot.name << endl;
+        cout << mouse.name << " " << mouse.get_print() << " лет " << endl;
+        cout << parrot.name << " " << parrot.get_print() << " лет " << endl;
     }
+    system("PAUSE");
     return 0;
 }
