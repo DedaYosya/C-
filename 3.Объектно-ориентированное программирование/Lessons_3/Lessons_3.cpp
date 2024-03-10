@@ -9,6 +9,55 @@
 //
 
 
+//#include <iostream>
+//#include <string>
+//using namespace std;
+//
+//// Создаем класс
+//class Animal {
+//    int age; // приватный
+//public:
+//    string name; // публичный
+//
+//    // Конструктор
+//    Animal(string name, int age) {
+//        this->name = name;
+//        this->age = age;
+//    }
+//
+//    // Гетеер для возраста
+//    int get_print() {
+//        return age;
+//    }
+//
+//    // Сеттер добавления к возрасту
+//     int set_birthday(int number) {
+//         age += number;
+//         get_print();
+//        return age;
+//    }
+//};
+//int main() {
+//    setlocale(LC_ALL, "Rus");
+//    
+//    // Объявляем класс
+//    Animal a1("Слон", 70);
+//    Animal a2("Лев", 35);
+//    Animal a3("Носорог", 78);
+//    // Выводим в консоль
+//    cout << "Животное: " << a1.name << " / Возраст: " << a1.get_print() << endl;
+//    cout << "Животное: " << a2.name << " / Возраст: " << a2.get_print() << endl;
+//    cout << "Животное: " << a3.name << " / Возраст: " << a3.get_print() << endl;
+//    cout << "-- Возраст после добавления" << endl;
+//    cout << "Животное: " << a1.name << " / Возраст: " << a1.set_birthday(10) << endl;
+//    cout << "Животное: " << a2.name << " / Возраст: " << a2.set_birthday(10) << endl;
+//    cout << "Животное: " << a3.name << " / Возраст: " << a3.set_birthday(10) << endl;
+//    system("PAUSE");
+//    return 0;
+//}
+
+// так сделано у куратора
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -26,32 +75,29 @@ public:
     }
 
     // Гетеер для возраста
-    int get_print() {
-        return age;
+    void print() {
+        cout << "Имя: " << this->name <<
+            "\tВозраст: " << this->age << endl;
     }
 
     // Сеттер добавления к возрасту
-     int set_birthday(int number) {
-         age += number;
-         get_print();
-        return age;
+    void birthday(int number) {
+        this->age += number;
+        this->print();
     }
 };
 int main() {
     setlocale(LC_ALL, "Rus");
-    
+
     // Объявляем класс
-    Animal a1("Слон", 70);
-    Animal a2("Лев", 35);
-    Animal a3("Носорог", 78);
+    Animal cat("Мурка", 4);
+    Animal dog("Шарик", 2);
+    Animal rat("Рататуй", 5);
+    
     // Выводим в консоль
-    cout << "Животное: " << a1.name << " / Возраст: " << a1.get_print() << endl;
-    cout << "Животное: " << a2.name << " / Возраст: " << a2.get_print() << endl;
-    cout << "Животное: " << a3.name << " / Возраст: " << a3.get_print() << endl;
+    cat.print();
+    dog.print();
+    rat.print();
     cout << "-- Возраст после добавления" << endl;
-    cout << "Животное: " << a1.name << " / Возраст: " << a1.set_birthday(10) << endl;
-    cout << "Животное: " << a2.name << " / Возраст: " << a2.set_birthday(10) << endl;
-    cout << "Животное: " << a3.name << " / Возраст: " << a3.set_birthday(10) << endl;
-    system("PAUSE");
-    return 0;
+    cat.birthday(10);
 }

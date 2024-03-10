@@ -22,8 +22,8 @@ public:
 
     // Конструктор
     Animal(string name_, int age_) {
-        name = name_;
-        _age = age_;
+        name = name_;  // this->name = name_;
+        _age = age_;   // this->age = age_;
     }
 };
 int main() {
@@ -35,7 +35,7 @@ setlocale(LC_ALL, "Rus");
     Animal a3("Носорог", 78);
 // Выводим в консоль
     cout << "Животное: " << a2.name << endl;
-
+    // cout << "Вес: " << a2.age << endl; недоступно потому что приватное
     system("PAUSE");
     return 0;
 }
