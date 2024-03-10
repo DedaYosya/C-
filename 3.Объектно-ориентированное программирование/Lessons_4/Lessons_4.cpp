@@ -104,10 +104,12 @@ public:
         this->age = age;
     }
 
+    // Сравнение возраста с числом
     bool compareAge(int age) {
         return this->age > age;
     }
 
+    // Сравнение возраста с возрастом
     bool compareAge(Animal a) {
         return this->age > a.age;
     }
