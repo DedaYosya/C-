@@ -68,3 +68,4 @@ int main() {
     Cat c;
     animal_speak(c);
 }
+

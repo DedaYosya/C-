@@ -57,35 +57,36 @@
 //    cout << "Сравнение: " << boolalpha << Backpack_1.Comparison(Backpack_2) << endl;
 //    
 //}
-#include <iostream>
-using namespace std;
-class B;
-class A {
-private:
-    int v1;
-public:
-    A(int x = 0) :v1(x) {}
-    friend bool operator==(const A& a, const  B& b);
-};
-class B {
-private:
-    int v2;
-public:
-    B(int x = 0) :v2(x) {}
-    friend bool operator==(const A& a, const  B& b);
+//#include <iostream>
+//using namespace std;
+//class B;
+//class A {
+//private:
+//    int v1;
+//public:
+//    A(int x = 0) :v1(x) {}
+//    friend bool operator==(const A& a, const  B& b);
+//};
+//class B {
+//private:
+//    int v2;
+//public:
+//    B(int x = 0) :v2(x) {}
+//    friend bool operator==(const A& a, const  B& b);
+//
+//};
+//bool operator==(const A& a, const  B& b) {
+//    return a.v1 == b.v2;
+//}
+//int main() {
+//    A a(5);
+//    B b(5);
+//    if (a == b) {
+//        cout << "Equal";
+//    }
+//    else {
+//        cout << "Not yet";
+//    }
+//    return 0;
+//}
 
-};
-bool operator==(const A& a, const  B& b) {
-    return a.v1 == b.v2;
-}
-int main() {
-    A a(5);
-    B b(5);
-    if (a == b) {
-        cout << "Equal";
-    }
-    else {
-        cout << "Not yet";
-    }
-    return 0;
-}
